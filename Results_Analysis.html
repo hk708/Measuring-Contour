@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <style>
+            p.small {
+              line-height: 0.7;
+            }
+            
+            p.big {
+              line-height: 1.8;
+            }
+        </style>
+    </head>
+    <body bgcolor="FFD733">
+        <center><h1>Algorithm Overview</h1></center>
+        <div>
+        <p>
+            <h3>
+            First we create a set of iso rectangles which are enclosed under one frame, which we then split into two halves such that both halves have roughly the same number of vertical edges. Now, when we come across a frame that contains a singular edge, we must then again split this frame into 3 parts or stripes. The first stripe along the edges of the rectangle, the second stripe being above the edges of the rectangle and the final one being below the edges of the rectangle. If the vertical edge we come across is a left edge, then the area on the other side of the frame and in the middle, will lie inside the set of iso rectangles. Now, while merging multiple frames, we start off with the introduction of the stripes from each frame to the other (We make more partitions along the Y axis in the respective frame). Now for each given stripe of a frame, if the edge contained does not have a partner edge in the merged frame, then the relevant stripe of the merged frame will definitely be enclosed in our set of iso rectangles. We repeat this merging process until the original frame is obtained. The contour pieces in this frame were formed by the parts of horizontal edges, and the adjacent stripe in which the rectangles are not enclosed, is also not covered.
+            </h3>
+        </p>
+        </div>
+        <hr>
+        <center><h1>Time Complexity of the Algorithm</h1></center>
+        <p>
+            <h3>
+            We assume T(n) to be the complexity of the STRIPES algorithm. The problem is divided into 2 subproblems of roughly the same size in the divide step. Since the base case works on only one edge, it takes constant time to run. Since the set operations take linear time, we can conclude that the merge step also runs in linear time, which gives us:
+            </h3>
+        </p>
+        <br>
+        <center><h2><i>T(n) = 2T(n/2) + O(n)</i></h2></center>
+        <br>
+        <h3>When we solve this, we get:</h3>
+        <br>
+        <center><h2><i>T(n) = O(nlog(n))</i></h2></center>
+        <hr>
+        <center><h1>Problems Faced</h1></center>
+        <div>
+            <p>
+                <h3>
+                <ul>
+                    <li>Difficulty in implementation of unordered sets and maps.</li>
+                    <li>Applying Object Oriented Principles learned in Java to C++</li>
+                </ul>
+                </h3>
+            </p>
+        </div>
+        <hr>
+        <center><h1>Results of Sample test cases</h1></center>
+        <div>
+            <p>
+                <h3>
+                    <i>Input</i> <br>
+                    2 <br>
+                    -4 -3 -2 1 <br>
+                    -2 4 -4 -2 <br>
+                    <br>
+                    <i>Output</i> <br>
+                    Contour : 24 <br>
+                    Measure : 15 <br>
+                    <br>
+                    <i>Input</i> <br>
+                    4 <br>
+                    -3 5 1 3 <br>
+                    -5 -2 1 6 <br>
+                    -6 2 0 7 <br>
+                    -3 6 -6 0 <br>
+                    <br>
+                    <i>Output</i> <br>
+                    Contour : 56 <br>
+                    Measure : 116 <br>                    
+                </h3>
+            </p>
+        </div>
+        <!-- <hr>
+        <center><h1>References</h1></center>
+        <div>
+            <p>
+                <h3>             
+                Optimal Divide-and-Conquer to Compute Measure and Contour for a Set of Iso-Rectangles*
+                </h3>
+            </p>
+        </div> -->
+        <hr>
+        <center><h1>Footnote</h1></center>
+        <div>
+            <p>
+                <h3>
+                <i>Authors:</i> <br>
+
+                Anurag Sidharth Aribandi 2018A7PS1218H <br>
+                Varun Narayanan 2018A7PS1226H <br>
+                Anish Sai Mitta 2018A7PS1221H <br>
+                Himnish Kapoor 2018A7PS1215H <br>
+                </h3>
+            </p>
+        </div>
+    </body>
+</html>
